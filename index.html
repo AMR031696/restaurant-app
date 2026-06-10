@@ -307,6 +307,53 @@
       margin-left: 6px; letter-spacing: .2px;
     }
 
+    /* ── TIP SELECTOR ─────────────────────────── */
+    .tip-opts-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .tip-opt {
+      flex: 1;
+      padding: 7px 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: none;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color .14s, color .14s, background .14s;
+    }
+    .tip-opt:hover  { border-color: var(--accent); color: var(--accent); }
+    .tip-opt.active { border-color: var(--accent); background: var(--accent-bg); color: var(--accent); }
+
+    .tip-custom-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .tip-custom-input {
+      width: 64px;
+      padding: 7px 10px;
+      border: 1.5px solid var(--accent);
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+      background: var(--card);
+      color: var(--text);
+      -moz-appearance: textfield;
+    }
+    .tip-custom-input:focus { outline: none; }
+    .tip-custom-input::-webkit-inner-spin-button,
+    .tip-custom-input::-webkit-outer-spin-button { opacity: 1; }
+    .tip-custom-label {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
     /* ── SPLIT OPTIONS ────────────────────────── */
     .split-stack { display: flex; flex-direction: column; gap: 8px; }
 
@@ -639,6 +686,9 @@ const S = {
   option:      null,   // 'full' | 'split' | 'items'
   splitCount:  2,
   picked:      {},            // { itemId: quantitySelected }
+  // tip state
+  tipPct:      18,            // current tip percentage
+  customTip:   false,         // true when Custom button is active
   // payment flow state
   screen:      'bill', // 'bill' | 'payment' | 'processing' | 'success' | 'closed'
   payMethod:   null,   // 'apple' | 'card' | 'reader'
@@ -646,7 +696,7 @@ const S = {
   lastPay:     null,   // { amount, payMethodLabel }
 };
 
-const TIP = 0.18;
+const TAX_RATE = 0.0625;
 
 const PAY_METHODS = {
   apple: { label: 'Apple Pay',          sub: 'Touch ID or Face ID' },
@@ -670,8 +720,9 @@ function statusLabel(s) {
 }
 
 function subtotal()   { return S.items.reduce((a,i) => a + i.price, 0); }
-function tipAmt()     { return subtotal() * TIP; }
-function grandTotal() { return subtotal() + tipAmt(); }
+function taxAmt()     { return subtotal() * TAX_RATE; }
+function tipAmt()     { return subtotal() * (S.tipPct / 100); }
+function grandTotal() { return subtotal() + taxAmt() + tipAmt(); }
 
 function pickedSubtotal() {
   return Object.entries(S.picked).reduce((a, [id, qty]) => {
@@ -679,7 +730,10 @@ function pickedSubtotal() {
     return a + (it ? (it.price / it.qty) * qty : 0);
   }, 0);
 }
-function pickedTotal() { return pickedSubtotal() * (1 + TIP); }
+function pickedTotal() {
+  const sub = pickedSubtotal();
+  return sub + sub * TAX_RATE + sub * (S.tipPct / 100);
+}
 
 // ═══════════════════════════════════════════
 //  ROUTING
@@ -781,6 +835,7 @@ function renderBill(tid) {
 
   const t   = S.tables.find(x => x.id === tid) || S.tables[3];
   const sub = subtotal();
+  const tax = taxAmt();
   const tip = tipAmt();
   const tot = grandTotal();
 
@@ -814,9 +869,27 @@ function renderBill(tid) {
             <span>Subtotal</span><span>${fmt(sub)}</span>
           </div>
           <div class="sum-row">
-            <span>Tip<span class="tip-tag">18% suggested</span></span>
-            <span>${fmt(tip)}</span>
+            <span>Tax (MA 6.25%)</span><span>${fmt(tax)}</span>
           </div>
+          <div class="sum-row" style="margin-bottom:8px">
+            <span>Tip</span><span>${fmt(tip)}</span>
+          </div>
+          <div class="tip-opts-row">
+            ${[15, 18, 20].map(p => `
+              <button class="tip-opt${!S.customTip && S.tipPct === p ? ' active' : ''}"
+                      onclick="setTip(${p})">${p}%</button>`).join('')}
+            <button class="tip-opt${S.customTip ? ' active' : ''}"
+                    onclick="setTip('custom')">Custom</button>
+          </div>
+          ${S.customTip ? `
+          <div class="tip-custom-wrap">
+            <input type="number" class="tip-custom-input" id="tip-custom"
+                   min="0" max="100" value="${S.tipPct}"
+                   oninput="setCustomTip(this.value)"
+                   onclick="event.stopPropagation()"
+                   placeholder="0">
+            <span class="tip-custom-label">%  → ${fmt(tip)}</span>
+          </div>` : ''}
           <div class="sum-row total-row">
             <span>Total</span><span>${fmt(tot)}</span>
           </div>
@@ -1093,6 +1166,22 @@ function setSplit(val) {
   repaint();
 }
 
+function setTip(val) {
+  if (val === 'custom') {
+    S.customTip = true;
+  } else {
+    S.customTip = false;
+    S.tipPct    = val;
+  }
+  repaint();
+}
+
+function setCustomTip(val) {
+  const pct = parseFloat(val);
+  S.tipPct = isNaN(pct) ? 0 : Math.max(0, Math.min(100, pct));
+  repaint();
+}
+
 function toggleItem(id) {
   if (id in S.picked) {
     delete S.picked[id];
@@ -1167,6 +1256,8 @@ function addAnotherPayment() {
   S.screen     = 'bill';
   S.option     = null;
   S.picked     = {};
+  S.tipPct     = 18;
+  S.customTip  = false;
   S.payMethod  = null;
   S.pendingPay = null;
   repaint();
@@ -1235,6 +1326,8 @@ function handleOverlayClick(e) {
 window.addEventListener('hashchange', () => {
   S.option     = null;
   S.screen     = 'bill';
+  S.tipPct     = 18;
+  S.customTip  = false;
   S.payMethod  = null;
   S.pendingPay = null;
   render();
