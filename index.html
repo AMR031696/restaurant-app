@@ -49,19 +49,8 @@
       top: 0;
       z-index: 10;
     }
-
-    .wordmark {
-      font-size: 17px;
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.6px;
-    }
-
-    .top-label {
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 500;
-    }
+    .wordmark  { font-size: 17px; font-weight: 800; color: var(--text); letter-spacing: -0.6px; }
+    .top-label { font-size: 12px; color: var(--muted); font-weight: 500; }
 
     .back-link {
       display: inline-flex;
@@ -85,7 +74,6 @@
       margin: 0 auto;
       padding: 32px 24px;
     }
-
     .page-header { margin-bottom: 28px; }
     .page-title  { font-size: 24px; font-weight: 700; letter-spacing: -.4px; margin-bottom: 4px; }
     .page-sub    { font-size: 13px; color: var(--muted); }
@@ -96,7 +84,6 @@
       gap: 12px;
       margin-bottom: 32px;
     }
-
     .stat-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -105,14 +92,7 @@
       box-shadow: var(--shadow-sm);
     }
     .stat-val   { font-size: 22px; font-weight: 700; letter-spacing: -.5px; }
-    .stat-label {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: .8px;
-      margin-top: 4px;
-    }
+    .stat-label { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; margin-top: 4px; }
 
     .section-label {
       font-size: 11px;
@@ -151,7 +131,6 @@
     .t-num    { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
     .t-guests { font-size: 12px; color: var(--muted); }
 
-    /* status dot */
     .s-dot {
       display: inline-flex;
       align-items: center;
@@ -159,11 +138,7 @@
       font-size: 12px;
       font-weight: 500;
     }
-    .s-dot .dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
+    .s-dot .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
     .s-paid    { color: var(--success); }
     .s-paid    .dot { background: var(--success); }
     .s-partial { color: var(--warning); }
@@ -171,26 +146,10 @@
     .s-unpaid  { color: var(--muted); }
     .s-unpaid  .dot { background: #D1D5DB; }
 
-    .t-total {
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: -.4px;
-      margin-bottom: 12px;
-    }
+    .t-total { font-size: 18px; font-weight: 700; letter-spacing: -.4px; margin-bottom: 12px; }
 
-    .prog-bar {
-      height: 3px;
-      background: var(--border);
-      border-radius: 3px;
-      overflow: hidden;
-      margin-bottom: 14px;
-    }
-    .prog-fill {
-      height: 100%;
-      border-radius: 3px;
-      background: var(--accent);
-      transition: width .5s ease;
-    }
+    .prog-bar { height: 3px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 14px; }
+    .prog-fill { height: 100%; border-radius: 3px; background: var(--accent); transition: width .5s ease; }
     .prog-fill.full { background: var(--success); }
 
     .qr-btn {
@@ -211,7 +170,7 @@
     }
     .qr-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
 
-    /* ── MODAL ────────────────────────────────── */
+    /* ── QR MODAL ─────────────────────────────── */
     .overlay {
       position: fixed;
       inset: 0;
@@ -224,7 +183,6 @@
       padding: 20px;
     }
     .overlay.hidden { display: none; }
-
     .modal {
       background: var(--card);
       border: 1px solid var(--border);
@@ -237,10 +195,8 @@
     }
     .modal-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
     .modal-sub   { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
-
     #qr-box { display: flex; justify-content: center; margin-bottom: 16px; }
     #qr-box canvas, #qr-box img { border-radius: 6px; border: 1px solid var(--border); }
-
     .modal-url {
       font-size: 10px;
       font-family: 'SF Mono', 'Fira Code', monospace;
@@ -273,30 +229,17 @@
       margin: 0 auto;
       padding-bottom: 56px;
     }
-
     .receipt-header {
       background: var(--card);
       border-bottom: 1px solid var(--border);
       padding: 24px 24px 20px;
     }
-    .receipt-venue {
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -.5px;
-      margin-bottom: 6px;
-    }
-    .receipt-meta {
-      font-size: 13px;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+    .receipt-venue { font-size: 22px; font-weight: 800; letter-spacing: -.5px; margin-bottom: 6px; }
+    .receipt-meta  { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
     .receipt-meta .sep { color: var(--border); }
 
     .bill-body { padding: 24px 16px 0; }
 
-    /* ── ITEM LIST ────────────────────────────── */
     .card-block {
       background: var(--card);
       border: 1px solid var(--border);
@@ -304,7 +247,6 @@
       overflow: hidden;
       box-shadow: var(--shadow-sm);
     }
-
     .row-item {
       display: flex;
       align-items: center;
@@ -323,39 +265,20 @@
       margin-right: 12px;
       flex-shrink: 0;
       display: flex; align-items: center; justify-content: center;
-      font-size: 10px;
-      font-weight: 700;
+      font-size: 10px; font-weight: 700;
       transition: all .14s;
     }
-    .row-item.picked .check-circle {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
+    .row-item.picked .check-circle { background: var(--accent); border-color: var(--accent); color: #fff; }
 
-    .item-name {
-      font-size: 14px;
-      color: var(--text);
-      font-weight: 400;
-    }
+    .item-name { font-size: 14px; color: var(--text); font-weight: 400; }
     .item-qty-tag {
-      font-size: 11px;
-      color: var(--muted);
+      font-size: 11px; color: var(--muted);
       border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 1px 5px;
-      margin-left: 7px;
-      font-weight: 500;
+      border-radius: 4px; padding: 1px 5px;
+      margin-left: 7px; font-weight: 500;
     }
-    .item-price {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text);
-      flex-shrink: 0;
-      margin-left: 8px;
-    }
+    .item-price { font-size: 14px; font-weight: 600; color: var(--text); flex-shrink: 0; margin-left: 8px; }
 
-    /* ── SUMMARY ──────────────────────────────── */
     .summary-block {
       background: var(--card);
       border: 1px solid var(--border);
@@ -373,23 +296,15 @@
     }
     .sum-row:last-child { margin-bottom: 0; }
     .sum-row.total-row {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text);
-      padding-top: 12px;
-      margin-top: 4px;
+      font-size: 16px; font-weight: 700; color: var(--text);
+      padding-top: 12px; margin-top: 4px;
       border-top: 1px solid var(--border);
     }
     .tip-tag {
-      font-size: 10px;
-      font-weight: 600;
-      color: var(--accent);
-      border: 1px solid #BFDBFE;
-      background: #EFF6FF;
-      padding: 2px 7px;
-      border-radius: 4px;
-      margin-left: 6px;
-      letter-spacing: .2px;
+      font-size: 10px; font-weight: 600; color: var(--accent);
+      border: 1px solid #BFDBFE; background: #EFF6FF;
+      padding: 2px 7px; border-radius: 4px;
+      margin-left: 6px; letter-spacing: .2px;
     }
 
     /* ── SPLIT OPTIONS ────────────────────────── */
@@ -418,11 +333,8 @@
     }
     .split-card.chosen .sc-radio { border-color: var(--accent); border-width: 2px; }
     .split-card.chosen .sc-radio::after {
-      content: '';
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      display: block;
+      content: ''; width: 8px; height: 8px;
+      border-radius: 50%; background: var(--accent); display: block;
     }
     .sc-text  { flex: 1; }
     .sc-title { font-size: 14px; font-weight: 600; }
@@ -436,30 +348,16 @@
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
+    .sc-detail { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
 
-    .sc-detail {
-      margin-top: 14px;
-      padding-top: 14px;
-      border-top: 1px solid var(--border);
-    }
-
-    .sc-input-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
+    .sc-input-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
     .sc-input-label { font-size: 13px; color: var(--muted); flex: 1; }
     .sc-input {
-      width: 68px;
-      padding: 8px;
+      width: 68px; padding: 8px;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      font-size: 16px;
-      font-weight: 700;
-      text-align: center;
-      background: var(--card);
-      color: var(--text);
+      font-size: 16px; font-weight: 700;
+      text-align: center; background: var(--card); color: var(--text);
       -moz-appearance: textfield;
       transition: border-color .15s;
     }
@@ -480,7 +378,142 @@
     .pill-label  { font-size: 12px; color: var(--muted); font-weight: 500; }
     .pill-amount { font-size: 20px; font-weight: 800; color: var(--accent); letter-spacing: -.5px; }
 
-    /* ── PAY BUTTON ───────────────────────────── */
+    /* ── PAYMENT METHOD SCREEN ────────────────── */
+    .pm-body {
+      padding: 28px 16px 0;
+    }
+    .pm-header { margin-bottom: 24px; }
+    .pm-title  { font-size: 20px; font-weight: 700; letter-spacing: -.4px; margin-bottom: 6px; }
+    .pm-amount-label { font-size: 13px; color: var(--muted); }
+    .pm-amount-label strong { color: var(--text); font-weight: 700; }
+
+    .pm-stack { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+
+    .pm-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: var(--shadow-sm);
+      transition: border-color .15s, background .15s;
+    }
+    .pm-card:hover  { border-color: #D1D5DB; }
+    .pm-card.chosen { border-color: var(--accent); background: var(--accent-bg); }
+
+    .pm-icon {
+      width: 44px; height: 44px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--text);
+      transition: background .15s, border-color .15s, color .15s;
+    }
+    .pm-card.chosen .pm-icon { background: #fff; border-color: #BFDBFE; color: var(--accent); }
+    .pm-icon svg { width: 22px; height: 22px; }
+
+    .pm-info { flex: 1; }
+    .pm-label { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+    .pm-sub   { font-size: 12px; color: var(--muted); }
+
+    .pm-radio {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color .15s;
+    }
+    .pm-card.chosen .pm-radio { border-color: var(--accent); border-width: 2px; }
+    .pm-card.chosen .pm-radio::after {
+      content: ''; width: 8px; height: 8px;
+      border-radius: 50%; background: var(--accent); display: block;
+    }
+
+    /* ── PROCESSING SCREEN ────────────────────── */
+    .processing-wrap {
+      min-height: calc(100vh - 52px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 40px;
+      text-align: center;
+    }
+    .spinner {
+      width: 40px; height: 40px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin .75s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .processing-text { font-size: 16px; font-weight: 600; color: var(--text); }
+    .processing-sub  { font-size: 13px; color: var(--muted); }
+
+    /* ── SUCCESS SCREEN ───────────────────────── */
+    .success-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 52px);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .success-icon {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: var(--success-bg);
+      border: 1.5px solid #BBF7D0;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      animation: pop .4s cubic-bezier(.175,.885,.32,1.275);
+    }
+    .success-icon svg { width: 28px; height: 28px; stroke: var(--success); stroke-width: 2.5; }
+    @keyframes pop { 0% { transform: scale(0); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+    .success-label  { font-size: 12px; font-weight: 600; color: var(--success); text-transform: uppercase; letter-spacing: .8px; margin-bottom: 8px; }
+    .success-amount { font-size: 44px; font-weight: 800; color: var(--text); letter-spacing: -1.5px; margin-bottom: 4px; }
+    .success-via    { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+    .success-sub    { font-size: 14px; color: var(--muted); margin-bottom: 36px; line-height: 1.55; }
+
+    .success-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      max-width: 280px;
+    }
+
+    /* ── CLOSED SCREEN ────────────────────────── */
+    .closed-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 52px);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .closed-check {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      background: var(--card);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .closed-check svg { width: 22px; height: 22px; stroke: var(--success); stroke-width: 2.5; }
+    .closed-title { font-size: 20px; font-weight: 700; letter-spacing: -.4px; margin-bottom: 8px; }
+    .closed-sub   { font-size: 14px; color: var(--muted); line-height: 1.55; }
+
+    /* ── BUTTONS ──────────────────────────────── */
     .pay-btn {
       width: 100%;
       padding: 14px;
@@ -496,53 +529,33 @@
     }
     .pay-btn:hover  { background: var(--accent-dark); }
     .pay-btn:active { transform: scale(.99); }
-    .pay-btn:disabled {
-      background: var(--border);
-      color: var(--muted);
-      cursor: not-allowed;
-      transform: none;
-    }
+    .pay-btn:disabled { background: var(--border); color: var(--muted); cursor: not-allowed; transform: none; }
 
-    /* ── SUCCESS ──────────────────────────────── */
-    .success-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 70vh;
-      padding: 40px 24px;
-      text-align: center;
-    }
-    .success-icon {
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      background: var(--success-bg);
-      border: 1.5px solid #BBF7D0;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 20px;
-      animation: pop .4s cubic-bezier(.175,.885,.32,1.275);
-    }
-    .success-icon svg { width: 28px; height: 28px; stroke: var(--success); stroke-width: 2.5; }
-    @keyframes pop {
-      0%   { transform: scale(0); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    .success-label  { font-size: 13px; font-weight: 600; color: var(--success); text-transform: uppercase; letter-spacing: .8px; margin-bottom: 8px; }
-    .success-amount { font-size: 44px; font-weight: 800; color: var(--text); letter-spacing: -1.5px; margin-bottom: 6px; }
-    .success-detail { font-size: 13px; color: var(--muted); margin-bottom: 36px; }
-    .success-sub    { font-size: 14px; color: var(--muted); margin-bottom: 28px; line-height: 1.5; }
     .outline-btn {
-      padding: 10px 28px;
+      width: 100%;
+      padding: 13px;
       background: none;
       border: 1px solid var(--border);
       color: var(--text);
       border-radius: var(--radius-lg);
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 600;
       cursor: pointer;
       transition: border-color .15s, background .15s;
     }
-    .outline-btn:hover { border-color: var(--text); background: var(--bg); }
+    .outline-btn:hover { border-color: #9CA3AF; background: var(--bg); }
+
+    .text-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 8px;
+      transition: color .15s;
+    }
+    .text-btn:hover { color: var(--text); }
 
     /* ── UTILITIES ────────────────────────────── */
     .hidden { display: none !important; }
@@ -551,10 +564,7 @@
     .mb-24  { margin-bottom: 24px; }
 
     .fade-in { animation: fadeUp .22s ease; }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(8px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
@@ -594,14 +604,24 @@ const S = {
     { id:6, name:'Sparkling Water',   price:6,  qty:2 },
     { id:7, name:'House Wine',        price:24, qty:2 },
   ],
+  // split selection state
   option:      null,   // 'full' | 'split' | 'items'
   splitCount:  2,
   picked:      new Set(),
-  showSuccess: false,
-  lastPay:     null,
+  // payment flow state
+  screen:      'bill', // 'bill' | 'payment' | 'processing' | 'success' | 'closed'
+  payMethod:   null,   // 'apple' | 'card' | 'reader'
+  pendingPay:  null,   // { amount, splitDesc, tid }
+  lastPay:     null,   // { amount, payMethodLabel }
 };
 
 const TIP = 0.18;
+
+const PAY_METHODS = {
+  apple: { label: 'Apple Pay',          sub: 'Touch ID or Face ID' },
+  card:  { label: 'Credit / Debit Card', sub: 'Visa, Mastercard, Amex' },
+  reader:{ label: 'Card Reader',         sub: 'Tap or insert your card' },
+};
 
 // ═══════════════════════════════════════════
 //  HELPERS
@@ -666,7 +686,6 @@ function renderDash() {
         <h1 class="page-title">Floor overview</h1>
         <p class="page-sub">${today}</p>
       </div>
-
       <div class="stats-row">
         <div class="stat-card">
           <div class="stat-val">${active}</div>
@@ -681,7 +700,6 @@ function renderDash() {
           <div class="stat-label">Total revenue</div>
         </div>
       </div>
-
       <div class="section-label">Tables</div>
       <div class="tables-grid">
         ${S.tables.map(tableCard).join('')}
@@ -701,9 +719,7 @@ function tableCard(t) {
           <div class="t-num">Table ${t.id}</div>
           <div class="t-guests">${t.guests} guest${t.guests !== 1 ? 's' : ''}</div>
         </div>
-        <div class="s-dot s-${s}">
-          <span class="dot"></span>${statusLabel(s)}
-        </div>
+        <div class="s-dot s-${s}"><span class="dot"></span>${statusLabel(s)}</div>
       </div>
       <div class="t-total">${fmt(t.total)}</div>
       <div class="prog-bar">
@@ -724,10 +740,14 @@ function tableCard(t) {
 }
 
 // ═══════════════════════════════════════════
-//  BILL VIEW
+//  BILL VIEW  (routes to sub-screens via S.screen)
 // ═══════════════════════════════════════════
 function renderBill(tid) {
-  if (S.showSuccess) return renderSuccess();
+  if (S.screen === 'payment')    return renderPaymentMethod();
+  if (S.screen === 'processing') return renderProcessing();
+  if (S.screen === 'success')    return renderSuccess();
+  if (S.screen === 'closed')     return renderClosed();
+
   const t   = S.tables.find(x => x.id === tid) || S.tables[3];
   const sub = subtotal();
   const tip = tipAmt();
@@ -739,19 +759,14 @@ function renderBill(tid) {
         <div class="wordmark">TabL</div>
         <button class="back-link" onclick="goHome()">← Back</button>
       </div>
-
       <div class="receipt-header">
         <div class="receipt-venue">La Trattoria</div>
         <div class="receipt-meta">
-          Table ${tid}
-          <span class="sep">·</span>
-          ${t.guests} guests
+          Table ${tid}<span class="sep">·</span>${t.guests} guests
         </div>
       </div>
-
       <div class="bill-body">
         <div class="section-label mb-16">Order</div>
-
         <div class="card-block mb-16">
           ${S.items.map(item => `
             <div class="row-item">
@@ -763,7 +778,6 @@ function renderBill(tid) {
             </div>
           `).join('')}
         </div>
-
         <div class="summary-block mb-24">
           <div class="sum-row">
             <span>Subtotal</span><span>${fmt(sub)}</span>
@@ -776,15 +790,12 @@ function renderBill(tid) {
             <span>Total</span><span>${fmt(tot)}</span>
           </div>
         </div>
-
         <div class="section-label mb-16">Payment method</div>
-
         <div class="split-stack mb-20">
           ${cardFull(tot)}
           ${cardSplit(tot)}
           ${cardItems()}
         </div>
-
         <button class="pay-btn"
                 ${S.option && canPay() ? '' : 'disabled'}
                 onclick="confirmPay(${tid})">
@@ -802,6 +813,7 @@ function canPay() {
   return false;
 }
 
+// ── split option cards ──
 function cardFull(tot) {
   const on = S.option === 'full';
   return `
@@ -820,10 +832,8 @@ function cardFull(tot) {
             <span class="pill-label">You'll pay</span>
             <span class="pill-amount">${fmt(tot)}</span>
           </div>
-        </div>
-      ` : ''}
-    </div>
-  `;
+        </div>` : ''}
+    </div>`;
 }
 
 function cardSplit(tot) {
@@ -852,10 +862,8 @@ function cardSplit(tot) {
             <span class="pill-label">Each person pays</span>
             <span class="pill-amount">${fmt(per)}</span>
           </div>
-        </div>
-      ` : ''}
-    </div>
-  `;
+        </div>` : ''}
+    </div>`;
 }
 
 function cardItems() {
@@ -883,21 +891,107 @@ function cardItems() {
                   ${item.qty > 1 ? `<span class="item-qty-tag">×${item.qty}</span>` : ''}
                 </div>
                 <div class="item-price">${fmt(item.price)}</div>
-              </div>
-            `).join('')}
+              </div>`).join('')}
           </div>
           <div class="amount-row">
             <span class="pill-label">Your total (incl. tip)</span>
             <span class="pill-amount">${S.picked.size > 0 ? fmt(tot) : '—'}</span>
           </div>
-        </div>
-      ` : ''}
-    </div>
-  `;
+        </div>` : ''}
+    </div>`;
 }
 
+// ═══════════════════════════════════════════
+//  PAYMENT METHOD SCREEN
+// ═══════════════════════════════════════════
+function renderPaymentMethod() {
+  const amount = S.pendingPay ? S.pendingPay.amount : 0;
+  return `
+    <div class="bill-wrap fade-in">
+      <div class="top-bar">
+        <div class="wordmark">TabL</div>
+        <button class="back-link" onclick="cancelPayment()">← Back</button>
+      </div>
+      <div class="pm-body">
+        <div class="pm-header">
+          <h2 class="pm-title">Choose payment method</h2>
+          <p class="pm-amount-label">You'll pay <strong>${fmt(amount)}</strong></p>
+        </div>
+        <div class="pm-stack">
+          ${pmCard('apple',  appleSVG())}
+          ${pmCard('card',   cardSVG())}
+          ${pmCard('reader', readerSVG())}
+        </div>
+        <button class="pay-btn"
+                ${S.payMethod ? '' : 'disabled'}
+                onclick="startPayment()">
+          Pay ${fmt(amount)}
+        </button>
+      </div>
+    </div>`;
+}
+
+function pmCard(key, iconSVG) {
+  const m  = PAY_METHODS[key];
+  const on = S.payMethod === key;
+  return `
+    <div class="pm-card ${on ? 'chosen' : ''}" onclick="selectPayMethod('${key}')">
+      <div class="pm-icon">${iconSVG}</div>
+      <div class="pm-info">
+        <div class="pm-label">${m.label}</div>
+        <div class="pm-sub">${m.sub}</div>
+      </div>
+      <div class="pm-radio"></div>
+    </div>`;
+}
+
+function appleSVG() {
+  return `<svg viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.05 20.28c-.98 1.22-2.1 2.44-3.38 2.47-1.31.02-1.73-.78-3.22-.78-1.51 0-1.97.76-3.2.8-1.25.04-2.35-1.31-3.34-2.53C1.67 17.56.44 12.88 2.21 9.7c.87-1.55 2.44-2.54 4.14-2.56 1.3-.02 2.52.87 3.31.87.8 0 2.29-1.08 3.86-.92.66.03 2.5.27 3.69 2.03-.09.06-2.2 1.28-2.18 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.66 3.31zM13 3.5c.73-.84 1.95-1.47 2.96-1.5.12 1.19-.34 2.38-1.05 3.22-.7.86-1.84 1.52-2.96 1.43-.14-1.16.42-2.36 1.05-3.15z"/>
+  </svg>`;
+}
+
+function cardSVG() {
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="6" width="20" height="13" rx="2.5"/>
+    <path d="M2 10h20"/>
+    <path d="M6 14.5h4"/>
+  </svg>`;
+}
+
+function readerSVG() {
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="6" y="2" width="12" height="20" rx="2"/>
+    <path d="M9.5 6.5h5"/>
+    <rect x="8.5" y="10" width="7" height="5" rx="1"/>
+    <path d="M10.5 18.5h3"/>
+  </svg>`;
+}
+
+// ═══════════════════════════════════════════
+//  PROCESSING SCREEN
+// ═══════════════════════════════════════════
+function renderProcessing() {
+  const m = S.payMethod ? PAY_METHODS[S.payMethod].label : '';
+  const a = S.pendingPay ? fmt(S.pendingPay.amount) : '';
+  return `
+    <div class="bill-wrap fade-in">
+      <div class="top-bar">
+        <div class="wordmark">TabL</div>
+      </div>
+      <div class="processing-wrap">
+        <div class="spinner"></div>
+        <div class="processing-text">Processing…</div>
+        <div class="processing-sub">${m} · ${a}</div>
+      </div>
+    </div>`;
+}
+
+// ═══════════════════════════════════════════
+//  SUCCESS SCREEN
+// ═══════════════════════════════════════════
 function renderSuccess() {
-  const { amount, method } = S.lastPay || {};
+  const { amount, payMethodLabel } = S.lastPay || {};
   return `
     <div class="bill-wrap fade-in">
       <div class="top-bar">
@@ -911,12 +1005,35 @@ function renderSuccess() {
         </div>
         <div class="success-label">Payment confirmed</div>
         <div class="success-amount">${fmt(amount || 0)}</div>
-        <div class="success-detail">${method || ''}</div>
-        <div class="success-sub">Thank you for dining at<br>La Trattoria.</div>
-        <button class="outline-btn" onclick="goHome()">Back to dashboard</button>
+        <div class="success-via">${payMethodLabel || ''}</div>
+        <div class="success-sub">Thank you for dining<br>at La Trattoria.</div>
+        <div class="success-actions">
+          <button class="pay-btn" onclick="addAnotherPayment()">Add another payment</button>
+          <button class="outline-btn" onclick="showClosed()">Done</button>
+        </div>
       </div>
-    </div>
-  `;
+    </div>`;
+}
+
+// ═══════════════════════════════════════════
+//  CLOSED SCREEN
+// ═══════════════════════════════════════════
+function renderClosed() {
+  return `
+    <div class="bill-wrap fade-in">
+      <div class="top-bar">
+        <div class="wordmark">TabL</div>
+      </div>
+      <div class="closed-wrap">
+        <div class="closed-check">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h2 class="closed-title">You're all set!</h2>
+        <p class="closed-sub">You can close this tab.</p>
+      </div>
+    </div>`;
 }
 
 // ═══════════════════════════════════════════
@@ -940,33 +1057,77 @@ function toggleItem(id) {
 function confirmPay(tid) {
   if (!S.option || !canPay()) return;
 
-  let amount = 0, method = '';
+  let amount = 0, splitDesc = '';
   const tot = grandTotal();
 
   if (S.option === 'full') {
-    amount = tot;
-    method = 'Full bill paid';
+    amount    = tot;
+    splitDesc = 'Full bill';
   } else if (S.option === 'split') {
-    amount = tot / S.splitCount;
-    method = `Split equally among ${S.splitCount} ${S.splitCount === 1 ? 'person' : 'people'}`;
+    amount    = tot / S.splitCount;
+    splitDesc = `Split among ${S.splitCount}`;
   } else {
-    amount = pickedTotal();
-    method = `${S.picked.size} item${S.picked.size !== 1 ? 's' : ''} selected`;
+    amount    = pickedTotal();
+    splitDesc = `${S.picked.size} item${S.picked.size !== 1 ? 's' : ''}`;
   }
 
-  const t = S.tables.find(x => x.id === tid);
-  if (t) t.paid = Math.min(t.total, t.paid + Math.min(amount, t.total));
+  S.pendingPay = { amount, splitDesc, tid };
+  S.screen     = 'payment';
+  repaint();
+}
 
-  S.lastPay     = { amount, method };
-  S.showSuccess = true;
+function selectPayMethod(key) {
+  S.payMethod = key;
+  repaint();
+}
+
+function cancelPayment() {
+  S.screen     = 'bill';
+  S.payMethod  = null;
+  S.pendingPay = null;
+  repaint();
+}
+
+function startPayment() {
+  if (!S.payMethod || !S.pendingPay) return;
+  S.screen = 'processing';
+  repaint();
+
+  setTimeout(() => {
+    const { amount, tid } = S.pendingPay;
+    const t = S.tables.find(x => x.id === tid);
+    if (t) t.paid = Math.min(t.total, t.paid + amount);
+
+    S.lastPay = {
+      amount,
+      payMethodLabel: PAY_METHODS[S.payMethod].label,
+    };
+    S.screen = 'success';
+    repaint();
+  }, 1500);
+}
+
+function addAnotherPayment() {
+  S.screen     = 'bill';
+  S.option     = null;
+  S.picked     = new Set();
+  S.payMethod  = null;
+  S.pendingPay = null;
+  repaint();
+}
+
+function showClosed() {
+  S.screen = 'closed';
   repaint();
 }
 
 function goHome() {
-  S.option      = null;
-  S.picked      = new Set();
-  S.showSuccess = false;
-  S.lastPay     = null;
+  S.option     = null;
+  S.picked     = new Set();
+  S.screen     = 'bill';
+  S.payMethod  = null;
+  S.pendingPay = null;
+  S.lastPay    = null;
   window.location.hash = '#dashboard';
 }
 
@@ -990,21 +1151,16 @@ function showQR(tid) {
 
   if (typeof QRCode !== 'undefined') {
     new QRCode(box, {
-      text:  url,
-      width: 200, height: 200,
-      colorDark:  '#111111',
-      colorLight: '#FFFFFF',
+      text: url, width: 200, height: 200,
+      colorDark: '#111111', colorLight: '#FFFFFF',
       correctLevel: QRCode.CorrectLevel.M,
     });
   } else {
-    box.innerHTML = `
-      <div style="width:200px;height:200px;background:#F9FAFB;border:1px solid #E5E7EB;
-                  border-radius:6px;display:flex;align-items:center;justify-content:center;
-                  color:#6B7280;font-size:12px;text-align:center;padding:16px">
-        QR library not loaded.<br>Check your connection.
-      </div>`;
+    box.innerHTML = `<div style="width:200px;height:200px;background:#F9FAFB;border:1px solid #E5E7EB;
+      border-radius:6px;display:flex;align-items:center;justify-content:center;
+      color:#6B7280;font-size:12px;text-align:center;padding:16px">
+      QR library not loaded.<br>Check your connection.</div>`;
   }
-
   $('overlay').classList.remove('hidden');
 }
 
@@ -1021,8 +1177,10 @@ function handleOverlayClick(e) {
 //  BOOT
 // ═══════════════════════════════════════════
 window.addEventListener('hashchange', () => {
-  S.option      = null;
-  S.showSuccess = false;
+  S.option     = null;
+  S.screen     = 'bill';
+  S.payMethod  = null;
+  S.pendingPay = null;
   render();
 });
 
